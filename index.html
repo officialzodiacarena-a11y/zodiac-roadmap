@@ -71,7 +71,7 @@
   }
 
   .site-title span {
-    color: var(--blue);
+    color: var(--amber);
   }
 
   .header-meta {
@@ -254,9 +254,9 @@
   .sprint-active-badge {
     font-family: var(--mono);
     font-size: 9px;
-    color: var(--blue);
-    background: var(--blue-dim);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: var(--teal);
+    background: var(--teal-dim);
+    border: 1px solid rgba(20, 184, 166, 0.3);
     padding: 2px 7px;
     border-radius: 4px;
     letter-spacing: 0.08em;
@@ -420,7 +420,7 @@
     <div class="site-title">Master <span>Execution</span> Roadmap</div>
   </div>
   <div class="header-meta">
-    <div class="status-live">&bull; Active &bull; Sprint 2.1</div>
+    <div class="status-live">&bull; Active &bull; Sprint 3.1</div>
     <div>QA: อลิส (CTO) &bull; PM: ศิลา</div>
   </div>
 </header>
@@ -428,23 +428,23 @@
 <main class="main">
   <!-- OVERVIEW CARDS -->
   <section class="overview">
-    <div class="ov-card c-blue">
-      <div class="ov-label">FOCUS SPRINT</div>
+    <div class="ov-card c-amber">
+      <div class="ov-label">PHASE 2 COMPLETION</div>
       <div class="ov-pct">100%</div>
-      <div class="ov-sub">Sprint 1.1 & 1.2 Completed</div>
+      <div class="ov-sub">Sprint 2.1–2.4 (11/11 Tasks Done)</div>
       <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
     </div>
-    <div class="ov-card c-amber">
-      <div class="ov-label">PHASE 1 PROGRESS</div>
+    <div class="ov-card c-blue">
+      <div class="ov-label">TOTAL DELIVERABLES</div>
       <div class="ov-pct">100%</div>
-      <div class="ov-sub">9 / 9 tasks complete</div>
+      <div class="ov-sub">Phase 1 & 2 Completed (20/20 tasks)</div>
       <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
     </div>
     <div class="ov-card c-teal">
       <div class="ov-label">TOTAL PROJECT</div>
-      <div class="ov-pct">23%</div>
-      <div class="ov-sub">9 / 39 tasks complete</div>
-      <div class="bar-track"><div class="bar-fill" style="width: 23%;"></div></div>
+      <div class="ov-pct">51%</div>
+      <div class="ov-sub">20 / 39 tasks complete</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 51%;"></div></div>
     </div>
   </section>
 
@@ -457,7 +457,7 @@
     </div>
 
     <!-- Sprint 1.1 -->
-    <div class="sprint-group open">
+    <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">1.1</span>
@@ -494,7 +494,7 @@
     </div>
 
     <!-- Sprint 1.2 -->
-    <div class="sprint-group open">
+    <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">1.2</span>
@@ -532,7 +532,7 @@
     <div class="phase-header">
       <span class="phase-tag p2">PHASE 2</span>
       <span class="phase-name">Competition Core & Match Engine</span>
-      <span class="phase-count">0 / 11 tasks</span>
+      <span class="phase-count">11 / 11 tasks</span>
     </div>
 
     <!-- Sprint 2.1 -->
@@ -541,125 +541,120 @@
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.1</span>
           <span class="sprint-name">League, Season & Teams</span>
-          <span class="sprint-active-badge">ACTIVE</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">5-Card Hub UI:</span>พัฒนาหน้า Home (Zodiac League, Spring, Summer, Fall, Winter)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">5-Card Hub UI:</span>พัฒนาหน้า Home (Zodiac League, Spring, Summer, Fall, Winter)</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Team & Roster Management:</span>ระบบสร้างทีม เชิญผู้เล่น และล็อก Roster</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Team & Roster Management:</span>ระบบสร้างทีม เชิญผู้เล่น และล็อก Roster</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Tournament Registry:</span>ระบบสร้างรายการแข่ง (League &rarr; Season &rarr; Tournament &rarr; Stage)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Tournament Registry:</span>ระบบสร้างรายการแข่ง (League &rarr; Season &rarr; Tournament &rarr; Stage)</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Registration Flow:</span>ระบบเปิดรับสมัครและตรวจสอบคุณสมบัติทีม (สมาชิกครบ 5 คน)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Registration Flow:</span>ระบบเปิดรับสมัครและตรวจสอบคุณสมบัติทีม (สมาชิกครบ 5 คน)</span>
         </div>
       </div>
     </div>
 
     <!-- Sprint 2.2 -->
-    <div class="sprint-group">
+    <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.2</span>
           <span class="sprint-name">Brackets & Schedule</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Schedule Generator:</span>ระบบสับตารางแข่งอัตโนมัติ (เช่น 8 ทีม Single Round Robin)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Schedule Generator:</span>ระบบสับตารางแข่งอัตโนมัติ (เช่น 8 ทีม Single Round Robin)</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Interactive Brackets:</span>คอมโพเนนต์แสดงสายการแข่งที่สามารถซูม/เลื่อนดูได้</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Interactive Brackets:</span>คอมโพเนนต์แสดงสายการแข่งที่สามารถซูม/เลื่อนดูได้</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Match Tables:</span>จัดเตรียมตาราง matches และ match_participants</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Match Tables:</span>จัดเตรียมตาราง matches และ match_participants</span>
         </div>
       </div>
     </div>
 
     <!-- Sprint 2.3 -->
-    <div class="sprint-group">
+    <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.3</span>
           <span class="sprint-name">Match Engine & Scrim Lobby</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
-      <div class="note-callout warn">
-        <span class="icon">&#9888;</span>
-        <span class="note-text">Dependency: Scrim Lobby ใช้ Real-time Chat — ต้องวางแผน WebSocket / Supabase Realtime ล่วงหน้า</span>
-      </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Match State Machine:</span>เขียน Logic คุมสถานะ (SCHEDULED &rarr; IN_PROGRESS &rarr; COMPLETED)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Match State Machine:</span>เขียน Logic คุมสถานะ (SCHEDULED &rarr; IN_PROGRESS &rarr; COMPLETED)</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Check-in System:</span>ระบบกดพร้อมก่อนเวลาแข่งจริง</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Check-in System:</span>ระบบกดพร้อมก่อนเวลาแข่งจริง</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Result Reporting:</span>ฟอร์มส่งผลการแข่งขัน (แนบรูปหลักฐาน) สำหรับกัปตันทีม</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Result Reporting:</span>ฟอร์มส่งผลการแข่งขัน (แนบรูปหลักฐาน) สำหรับกัปตันทีม</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Scrim & Match Lobby:</span>ห้องล็อบบี้นัดซ้อมพร้อมแชต Real-time</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Scrim & Match Lobby:</span>ห้องล็อบบี้นัดซ้อมพร้อมแชต Real-time</span>
         </div>
       </div>
     </div>
 
     <!-- Sprint 2.4 -->
-    <div class="sprint-group">
+    <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.4</span>
           <span class="sprint-name">Referee & Dispute Operations</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Result Confirmation:</span>ระบบกดยืนยันผลแข่งระหว่าง 2 ทีม</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Result Confirmation:</span>ระบบกดยืนยันผลแข่งระหว่าง 2 ทีม</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Dispute & Penalty:</span>ระบบแจ้งผลค้าน (Dispute) และบันทึกบทลงโทษนักกีฬา</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Dispute & Penalty:</span>ระบบแจ้งผลค้าน (Dispute) และบันทึกบทลงโทษนักกีฬา</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Admin Control Room:</span>หน้าแดชบอร์ดกรรมการสำหรับอนุมัติ/แก้ไขผลการแข่ง</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Admin Control Room:</span>หน้าแดชบอร์ดกรรมการสำหรับอนุมัติ/แก้ไขผลการแข่ง</span>
         </div>
       </div>
     </div>
@@ -674,11 +669,12 @@
     </div>
 
     <!-- Sprint 3.1 -->
-    <div class="sprint-group">
+    <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">3.1</span>
           <span class="sprint-name">ZP Ranking Engine</span>
+          <span class="sprint-active-badge">ACTIVE</span>
         </div>
         <div class="sprint-progress-wrap">
           <span class="sprint-pct-label">0%</span>
