@@ -420,7 +420,7 @@
     <div class="site-title">Master <span>Execution</span> Roadmap</div>
   </div>
   <div class="header-meta">
-    <div class="status-live">&bull; Active &bull; Sprint 3.1</div>
+    <div class="status-live">&bull; Active &bull; Sprint 2.3</div>
     <div>QA: อลิส (CTO) &bull; PM: ศิลา</div>
   </div>
 </header>
@@ -430,20 +430,20 @@
   <section class="overview">
     <div class="ov-card c-amber">
       <div class="ov-label">PHASE 2 COMPLETION</div>
-      <div class="ov-pct">100%</div>
-      <div class="ov-sub">Sprint 2.1–2.4 (11/11 Tasks Done)</div>
-      <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+      <div class="ov-pct">64%</div>
+      <div class="ov-sub">Sprint 2.1–2.3 partial (9/14 Tasks Done)</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 64%;"></div></div>
     </div>
     <div class="ov-card c-blue">
-      <div class="ov-label">TOTAL DELIVERABLES</div>
+      <div class="ov-label">PHASE 1 COMPLETE</div>
       <div class="ov-pct">100%</div>
-      <div class="ov-sub">Phase 1 & 2 Completed (20/20 tasks)</div>
+      <div class="ov-sub">Phase 1 Done (9/9 tasks)</div>
       <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
     </div>
     <div class="ov-card c-teal">
       <div class="ov-label">TOTAL PROJECT</div>
-      <div class="ov-pct">51%</div>
-      <div class="ov-sub">20 / 39 tasks complete</div>
+      <div class="ov-pct">40%</div>
+      <div class="ov-sub">18 / 45 tasks complete</div>
       <div class="bar-track"><div class="bar-fill" style="width: 51%;"></div></div>
     </div>
   </section>
@@ -532,7 +532,7 @@
     <div class="phase-header">
       <span class="phase-tag p2">PHASE 2</span>
       <span class="phase-name">Competition Core & Match Engine</span>
-      <span class="phase-count">11 / 11 tasks</span>
+      <span class="phase-count">9 / 14 tasks</span>
     </div>
 
     <!-- Sprint 2.1 -->
@@ -602,59 +602,80 @@
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.3</span>
-          <span class="sprint-name">Match Engine & Scrim Lobby</span>
+          <span class="sprint-name">Broadcast Overlay & Spectator Suite</span>
+          <span class="sprint-active-badge">ACTIVE</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">100%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">56%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 56%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Match State Machine:</span>เขียน Logic คุมสถานะ (SCHEDULED &rarr; IN_PROGRESS &rarr; COMPLETED)</span>
+          <span class="task-label"><span class="task-name done-text">Replay Storage Schema:</span>สร้างตาราง match_replays พร้อม RLS และ Indexes</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Check-in System:</span>ระบบกดพร้อมก่อนเวลาแข่งจริง</span>
+          <span class="task-label"><span class="task-name done-text">Live Stream & Telemetry Schema:</span>สร้างตาราง streams, stream_sessions, ap_earning_rules</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Result Reporting:</span>ฟอร์มส่งผลการแข่งขัน (แนบรูปหลักฐาน) สำหรับกัปตันทีม</span>
+          <span class="task-label"><span class="task-name done-text">Replay Query APIs:</span>/matches/[id]/replays, /players/[id]/replays, /matches/[id]/mvp</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Scrim & Match Lobby:</span>ห้องล็อบบี้นัดซ้อมพร้อมแชต Real-time</span>
+          <span class="task-label"><span class="task-name done-text">Broadcast Overlay (OBS):</span>Real-time 1080p Browser Source พร้อม Scene Transitions (VETO/LIVE/AWAITING_RESULT)</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Spectator HUD Control Panel:</span>Referee & Producer Console พร้อม State Machine Guard และ Telemetry Polling</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Match State Machine:</span>เขียน Logic คุมสถานะ (SCHEDULED &rarr; IN_PROGRESS &rarr; COMPLETED)</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Check-in System:</span>ระบบกดพร้อมก่อนเวลาแข่งจริง</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Result Reporting:</span>ฟอร์มส่งผลการแข่งขัน (แนบรูปหลักฐาน) สำหรับกัปตันทีม</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Scrim & Match Lobby:</span>ห้องล็อบบี้นัดซ้อมพร้อมแชต Real-time</span>
         </div>
       </div>
     </div>
 
     <!-- Sprint 2.4 -->
-    <div class="sprint-group open">
+    <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">2.4</span>
           <span class="sprint-name">Referee & Dispute Operations</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">100%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">0%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Result Confirmation:</span>ระบบกดยืนยันผลแข่งระหว่าง 2 ทีม</span>
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Result Confirmation:</span>ระบบกดยืนยันผลแข่งระหว่าง 2 ทีม</span>
         </div>
         <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Dispute & Penalty:</span>ระบบแจ้งผลค้าน (Dispute) และบันทึกบทลงโทษนักกีฬา</span>
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Dispute & Penalty:</span>ระบบแจ้งผลค้าน (Dispute) และบันทึกบทลงโทษนักกีฬา</span>
         </div>
         <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Admin Control Room:</span>หน้าแดชบอร์ดกรรมการสำหรับอนุมัติ/แก้ไขผลการแข่ง</span>
+          <span class="task-check todo"></span>
+          <span class="task-label"><span class="task-name">Admin Control Room:</span>หน้าแดชบอร์ดกรรมการสำหรับอนุมัติ/แก้ไขผลการแข่ง</span>
         </div>
       </div>
     </div>
@@ -665,7 +686,7 @@
     <div class="phase-header">
       <span class="phase-tag p3">PHASE 3</span>
       <span class="phase-name">Ranking, Economy & Extended Features</span>
-      <span class="phase-count">0 / 16 tasks</span>
+      <span class="phase-count">0 / 16 tasks — DB Foundation Ready</span>
     </div>
 
     <!-- Sprint 3.1 -->
@@ -735,8 +756,8 @@
           <span class="sprint-name">Streaming & AP Distribution</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--teal);"></div></div></div>
+          <span class="sprint-pct-label">40%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 40%; background: var(--teal);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
@@ -746,8 +767,12 @@
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Embedded Streaming:</span>ติดตั้ง Video Player สำหรับดูถ่ายทอดสด</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Embedded Streaming:</span>ติดตั้ง Video Player สำหรับดูถ่ายทอดสด (OBS Overlay + Supabase Realtime)</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Replay & Clip API:</span>ระบบ create-clip, replay query endpoints พร้อม Schema (Signed-off by อลิส)</span>
         </div>
         <div class="task-item">
           <span class="task-check todo"></span>
@@ -760,10 +785,6 @@
         <div class="task-item">
           <span class="task-check todo"></span>
           <span class="task-label"><span class="task-name">AP Wallet Architecture:</span>ระบบกระเป๋าแต้มพร้อม Lock Table ป้องกันการปั๊มแต้มซ้ำซ้อน</span>
-        </div>
-        <div class="task-item" style="border-color: rgba(245, 158, 11, 0.4);">
-          <span class="task-check pending">&#9203;</span>
-          <span class="task-label"><span class="task-name" style="color: var(--amber);">[Pending Alice] Replay & Clip Maker Engine:</span>ระบบ Live DVR Player ตัดคลิปไฮไลท์ 30 วินาที + บันทึก Metadata ลง Supabase (รอ CTO Review)</span>
         </div>
       </div>
     </div>
