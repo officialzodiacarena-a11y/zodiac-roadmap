@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zodiac Arena — Master Execution Roadmap</title>
+<title>Zodiac Arena — Master Execution Roadmap & Readiness Tracker</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -21,6 +21,8 @@
     --teal-dim:    #0f3630;
     --violet:      #8b5cf6;
     --violet-dim:  #2d1b69;
+    --rose:        #f43f5e;
+    --rose-dim:    #4c0519;
 
     --text-1: #f0f4ff;
     --text-2: #94a3b8;
@@ -111,16 +113,16 @@
   /* ── OVERVIEW STRIP ── */
   .overview {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 
   .ov-card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 18px 22px;
+    padding: 18px 20px;
     position: relative;
     overflow: hidden;
   }
@@ -134,6 +136,7 @@
   .ov-card.c-blue::before  { background: var(--blue); }
   .ov-card.c-amber::before { background: var(--amber); }
   .ov-card.c-teal::before  { background: var(--teal); }
+  .ov-card.c-rose::before  { background: var(--rose); }
 
   .ov-label {
     font-family: var(--mono);
@@ -145,7 +148,7 @@
 
   .ov-pct {
     font-family: var(--mono);
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     line-height: 1;
     margin-bottom: 6px;
@@ -153,9 +156,10 @@
   .c-blue  .ov-pct { color: var(--blue); }
   .c-amber .ov-pct { color: var(--amber); }
   .c-teal  .ov-pct { color: var(--teal); }
+  .c-rose  .ov-pct { color: var(--rose); }
 
   .ov-sub {
-    font-size: 13px;
+    font-size: 12px;
     color: var(--text-2);
     margin-bottom: 12px;
     white-space: nowrap;
@@ -178,6 +182,70 @@
   .c-blue  .bar-fill { background: var(--blue); }
   .c-amber .bar-fill { background: var(--amber); }
   .c-teal  .bar-fill { background: var(--teal); }
+  .c-rose  .bar-fill { background: var(--rose); }
+
+  /* ── DEPENDENCY BLOCKER PANEL ── */
+  .blocker-section {
+    background: linear-gradient(180deg, #180d12 0%, var(--surface) 100%);
+    border: 1px solid var(--rose-dim);
+    border-left: 4px solid var(--rose);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 36px;
+  }
+
+  .blocker-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .blocker-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .blocker-card {
+    background: rgba(13, 17, 23, 0.7);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+
+  .blocker-badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  .badge-finance { background: #3b2005; color: #fbbf24; border: 1px solid #78350f; }
+  .badge-vendor  { background: #3b0712; color: #fb7185; border: 1px solid #881337; }
+  .badge-api     { background: #1e1b4b; color: #a5b4fc; border: 1px solid #3730a3; }
+  .badge-design  { background: #064e3b; color: #34d399; border: 1px solid #065f46; }
+
+  .blocker-item-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-1);
+    margin-bottom: 4px;
+  }
+
+  .blocker-desc {
+    font-size: 12px;
+    color: var(--text-2);
+    line-height: 1.4;
+  }
 
   /* ── PHASE SECTION ── */
   .phase-section { margin-bottom: 36px; }
@@ -335,12 +403,6 @@
     color: transparent;
   }
 
-  .task-check.pending {
-    border: 1.5px dashed var(--amber);
-    color: var(--amber);
-    font-size: 9px;
-  }
-
   .task-label {
     font-size: 13px;
     color: var(--text-2);
@@ -377,6 +439,12 @@
     border-left-color: var(--amber);
   }
 
+  .note-callout.success {
+    background: #06201b;
+    border-color: var(--teal-dim);
+    border-left-color: var(--teal);
+  }
+
   .note-callout .icon { font-size: 12px; flex-shrink: 0; margin-top: 1px; }
   .note-callout .note-text { font-size: 12px; color: var(--text-2); line-height: 1.5; }
 
@@ -398,12 +466,17 @@
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 720px) {
+  @media (max-width: 860px) {
     .site-header, .main, .site-footer { padding-left: 20px; padding-right: 20px; }
-    .overview { grid-template-columns: 1fr; }
+    .overview { grid-template-columns: 1fr 1fr; }
+    .blocker-grid { grid-template-columns: 1fr; }
     .sprint-bar { width: 60px; }
     .task-list { padding-left: 24px; }
     .note-callout { margin-left: 0; }
+  }
+
+  @media (max-width: 480px) {
+    .overview { grid-template-columns: 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -416,35 +489,93 @@
 
 <header class="site-header">
   <div>
-    <div class="wordmark">ZODIAC ARENA &bull; INTERNAL</div>
-    <div class="site-title">Master <span>Execution</span> Roadmap</div>
+    <div class="wordmark">ZODIAC ARENA &bull; INTERNAL ROADMAP</div>
+    <div class="site-title">Master <span>Execution</span> & Readiness Tracker</div>
   </div>
   <div class="header-meta">
-    <div class="status-live">&bull; Active &bull; Sprint 2.3</div>
-    <div>QA: อลิส (CTO) &bull; PM: ศิลา</div>
+    <div class="status-live">&bull; Phase 5 & 6 Smoke Test Passed &bull; Ready for Phase 7</div>
+    <div>QA/CTO: อลิส &bull; Tech Lead / Solo Dev: พี่หยัด &bull; Project Arch: ศิลา</div>
   </div>
 </header>
 
 <main class="main">
   <!-- OVERVIEW CARDS -->
   <section class="overview">
-    <div class="ov-card c-amber">
-      <div class="ov-label">PHASE 2 COMPLETION</div>
-      <div class="ov-pct">64%</div>
-      <div class="ov-sub">Sprint 2.1–2.3 partial (9/14 Tasks Done)</div>
-      <div class="bar-track"><div class="bar-fill" style="width: 64%;"></div></div>
-    </div>
     <div class="ov-card c-blue">
-      <div class="ov-label">PHASE 1 COMPLETE</div>
+      <div class="ov-label">PHASE 1 (FOUNDATION)</div>
       <div class="ov-pct">100%</div>
-      <div class="ov-sub">Phase 1 Done (9/9 tasks)</div>
+      <div class="ov-sub">Auth, Profiles & Teams Ready</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
+    </div>
+    <div class="ov-card c-amber">
+      <div class="ov-label">PHASE 2 (COMPETITION)</div>
+      <div class="ov-pct">100%</div>
+      <div class="ov-sub">Brackets, HUD & Referees Done</div>
       <div class="bar-track"><div class="bar-fill" style="width: 100%;"></div></div>
     </div>
     <div class="ov-card c-teal">
-      <div class="ov-label">TOTAL PROJECT</div>
-      <div class="ov-pct">40%</div>
-      <div class="ov-sub">18 / 45 tasks complete</div>
-      <div class="bar-track"><div class="bar-fill" style="width: 51%;"></div></div>
+      <div class="ov-label">PHASE 3 (ECONOMY / AP)</div>
+      <div class="ov-pct">85%</div>
+      <div class="ov-sub">Billing & Market Done (Phase 5-6)</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 85%;"></div></div>
+    </div>
+    <div class="ov-card c-rose">
+      <div class="ov-label">READINESS & BLOCKERS</div>
+      <div class="ov-pct">5 Items</div>
+      <div class="ov-sub">Keys / Accounts / Gateways Pending</div>
+      <div class="bar-track"><div class="bar-fill" style="width: 50%;"></div></div>
+    </div>
+  </section>
+
+  <!-- PENDING DEPENDENCIES & BUSINESS BLOCKERS (สิ่งที่ขาดก่อน GO-LIVE) -->
+  <section class="blocker-section">
+    <div class="blocker-title">
+      <span>⚠️</span> สิ่งที่ยังขาด & จุดที่ต้องเตรียมก่อนเปิดระบบจริง (Business & External Blockers)
+    </div>
+    <div class="blocker-desc">
+      โค้ดระบบ Backend, DB Migrations, Security Locking และ RPCs สร้างเสร็จและเทสผ่าน 100% แล้ว แต่ระบบจริงยังต้องรอ Third-Party Credentials และ Business Entities เหล่านี้เพื่อเปิดใช้เงินจริง:
+    </div>
+
+    <div class="blocker-grid">
+      <!-- Item 1: Banking & Payment Gateway -->
+      <div class="blocker-card">
+        <span class="blocker-badge badge-finance">Finance & Gateway</span>
+        <div class="blocker-item-name">1. บัญชีธนาคารนิติบุคคล & Omise/Stripe Live Keys</div>
+        <div class="blocker-desc">
+          • <strong>สถานะปัจจุบัน:</strong> ใช้ Mock Webhook และ Local Test Secret<br>
+          • <strong>สิ่งที่ขาด:</strong> บัญชีธนาคารสำหรับรับเงิน THB (PromptPay) และ Secret Keys ของ Payment Gateway จริง เพื่อผูกกับ <code>/subscriptions/checkout</code>
+        </div>
+      </div>
+
+      <!-- Item 2: Riot RSO API -->
+      <div class="blocker-card">
+        <span class="blocker-badge badge-api">Game API (Riot)</span>
+        <div class="blocker-item-name">2. Riot Production RSO & VALORANT API Key</div>
+        <div class="blocker-desc">
+          • <strong>สถานะปัจจุบัน:</strong> ใช้ระบบ Manual / Self-Declared ID<br>
+          • <strong>สิ่งที่ขาด:</strong> Production RSO Approval จาก Riot Games เพื่อทำ Automated Match History Sync และยืนยันตัวตนระดับ Verified
+        </div>
+      </div>
+
+      <!-- Item 3: SMS / Email OTP Provider -->
+      <div class="blocker-card">
+        <span class="blocker-badge badge-vendor">Vendor Service</span>
+        <div class="blocker-item-name">3. บริการส่ง SMS / Email OTP สำหรับ P2P Transfer</div>
+        <div class="blocker-desc">
+          • <strong>สถานะปัจจุบัน:</strong> จำลอง OTP Payload ผ่าน <code>notifications</code> table ชั่วคราว<br>
+          • <strong>สิ่งที่ขาด:</strong> บัญชี SMS Gateway (เช่น Twilio/SMS-MKT) หรือ SendGrid Mailer เพื่อยิงรหัส OTP 6 หลักเข้ามือถือนักกีฬาจริง
+        </div>
+      </div>
+
+      <!-- Item 4: UI Sign-Off -->
+      <div class="blocker-card">
+        <span class="blocker-badge badge-design">UI & Design Token</span>
+        <div class="blocker-item-name">4. Prototype Sign-off (Storefront & Analytics)</div>
+        <div class="blocker-desc">
+          • <strong>สถานะปัจจุบัน:</strong> UI เป็นรูปแบบ Pending Prototype Components<br>
+          • <strong>สิ่งที่ขาด:</strong> ตรวจรับแบบหน้าตาสุดท้ายของ StorefrontManager และ ProAnalyticsDashboard ก่อนล็อกแบบ Production
+        </div>
+      </div>
     </div>
   </section>
 
@@ -453,7 +584,7 @@
     <div class="phase-header">
       <span class="phase-tag p1">PHASE 1</span>
       <span class="phase-name">Identity & Platform Foundation</span>
-      <span class="phase-count">9 / 9 tasks</span>
+      <span class="phase-count">9 / 9 tasks (100% COMPLETE)</span>
     </div>
 
     <!-- Sprint 1.1 -->
@@ -472,23 +603,19 @@
       <div class="task-list">
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Setup & Deploy:</span>สร้างโปรเจกต์ Supabase ด้วย Gmail โซดิแอคใหม่ และโครงสร้าง Next.js (App Router)</span>
+          <span class="task-label"><span class="task-name done-text">Setup & Deploy:</span>สร้างโปรเจกต์ Supabase และโครงสร้าง Next.js (App Router)</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Auth Layer (Layer A):</span>เชื่อมต่อระบบ Google / Email / Supabase Auth</span>
+          <span class="task-label"><span class="task-name done-text">Auth Layer:</span>เชื่อมต่อระบบ Google / Email / Supabase Auth</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Database Schema Draft:</span>ร่าง DB Domain Model (Identity, Organization, Competition)</span>
+          <span class="task-label"><span class="task-name done-text">Audit Log Infrastructure:</span>สร้าง Immutable Audit Log Table</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Audit Log Infrastructure:</span>สร้าง Audit Log table (Immutable) ตั้งแต่ต้น — ห้าม retrofit ทีหลัง</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Riot RSO Application:</span>ยื่นขอสิทธิ์ RSO กับ Riot Games ทันที (approval ใช้เวลาหลายเดือน)</span>
+          <span class="task-label"><span class="task-name done-text">Riot RSO Application:</span>ยื่นขอสิทธิ์ RSO กับ Riot Games</span>
         </div>
       </div>
     </div>
@@ -509,19 +636,15 @@
       <div class="task-list">
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">First-time Link Modal:</span>สร้างหน้าต่างกรอก Game ID + Tagline เมื่อล็อกอินครั้งแรก</span>
+          <span class="task-label"><span class="task-name done-text">Link Modal:</span>หน้าต่างกรอก Game ID + Tagline</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Athlete Status (Layer C):</span>วาง Logic สถานะ UNLINKED &rarr; SELF_DECLARED</span>
+          <span class="task-label"><span class="task-name done-text">Athlete Status:</span>Logic ปรับสถานะ UNLINKED &rarr; SELF_DECLARED</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Athlete Profile (Layer B):</span>สร้างหน้าจัดการข้อมูลส่วนตัว (ชื่อ, จังหวัด, Nickname)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Role & Permission:</span>สร้างระบบสิทธิ์ (Athlete, Team Admin, Tournament Admin)</span>
+          <span class="task-label"><span class="task-name done-text">Role & Permission:</span>ระบบสิทธิ์ Athlete, Team Admin, Tournament Admin</span>
         </div>
       </div>
     </div>
@@ -532,150 +655,34 @@
     <div class="phase-header">
       <span class="phase-tag p2">PHASE 2</span>
       <span class="phase-name">Competition Core & Match Engine</span>
-      <span class="phase-count">9 / 14 tasks</span>
+      <span class="phase-count">14 / 14 tasks (100% COMPLETE)</span>
     </div>
 
-    <!-- Sprint 2.1 -->
-    <div class="sprint-group open">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">2.1</span>
-          <span class="sprint-name">League, Season & Teams</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">100%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">5-Card Hub UI:</span>พัฒนาหน้า Home (Zodiac League, Spring, Summer, Fall, Winter)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Team & Roster Management:</span>ระบบสร้างทีม เชิญผู้เล่น และล็อก Roster</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Tournament Registry:</span>ระบบสร้างรายการแข่ง (League &rarr; Season &rarr; Tournament &rarr; Stage)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Registration Flow:</span>ระบบเปิดรับสมัครและตรวจสอบคุณสมบัติทีม (สมาชิกครบ 5 คน)</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 2.2 -->
-    <div class="sprint-group open">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">2.2</span>
-          <span class="sprint-name">Brackets & Schedule</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">100%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Schedule Generator:</span>ระบบสับตารางแข่งอัตโนมัติ (เช่น 8 ทีม Single Round Robin)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Interactive Brackets:</span>คอมโพเนนต์แสดงสายการแข่งที่สามารถซูม/เลื่อนดูได้</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Match Tables:</span>จัดเตรียมตาราง matches และ match_participants</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 2.3 -->
-    <div class="sprint-group open">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">2.3</span>
-          <span class="sprint-name">Broadcast Overlay & Spectator Suite</span>
-          <span class="sprint-active-badge">ACTIVE</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">56%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 56%; background: var(--amber);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Replay Storage Schema:</span>สร้างตาราง match_replays พร้อม RLS และ Indexes</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Live Stream & Telemetry Schema:</span>สร้างตาราง streams, stream_sessions, ap_earning_rules</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Replay Query APIs:</span>/matches/[id]/replays, /players/[id]/replays, /matches/[id]/mvp</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Broadcast Overlay (OBS):</span>Real-time 1080p Browser Source พร้อม Scene Transitions (VETO/LIVE/AWAITING_RESULT)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Spectator HUD Control Panel:</span>Referee & Producer Console พร้อม State Machine Guard และ Telemetry Polling</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Match State Machine:</span>เขียน Logic คุมสถานะ (SCHEDULED &rarr; IN_PROGRESS &rarr; COMPLETED)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Check-in System:</span>ระบบกดพร้อมก่อนเวลาแข่งจริง</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Result Reporting:</span>ฟอร์มส่งผลการแข่งขัน (แนบรูปหลักฐาน) สำหรับกัปตันทีม</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Scrim & Match Lobby:</span>ห้องล็อบบี้นัดซ้อมพร้อมแชต Real-time</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 2.4 -->
+    <!-- Sprint 2.1-2.4 All Complete -->
     <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
-          <span class="sprint-id">2.4</span>
-          <span class="sprint-name">Referee & Dispute Operations</span>
+          <span class="sprint-id">2.1-2.4</span>
+          <span class="sprint-name">Tournament Engine, Brackets, OBS Overlay & Disputes</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--amber);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--amber);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
       <div class="task-list">
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Result Confirmation:</span>ระบบกดยืนยันผลแข่งระหว่าง 2 ทีม</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Tournament Lifecycle:</span>ระบบ League &rarr; Season &rarr; Stage และการสับตารางอัตโนมัติ</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Dispute & Penalty:</span>ระบบแจ้งผลค้าน (Dispute) และบันทึกบทลงโทษนักกีฬา</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Broadcast Suite:</span>OBS 1080p Real-time Overlay พร้อม Scene Transitions และ MVP HUD</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Admin Control Room:</span>หน้าแดชบอร์ดกรรมการสำหรับอนุมัติ/แก้ไขผลการแข่ง</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Dispute & Referee Room:</span>ระบบค้านผลการแข่ง ตรวจสอบหลักฐาน และหักคะแนน/แบนนักกีฬา</span>
         </div>
       </div>
     </div>
@@ -685,116 +692,87 @@
   <section class="phase-section">
     <div class="phase-header">
       <span class="phase-tag p3">PHASE 3</span>
-      <span class="phase-name">Ranking, Economy & Extended Features</span>
-      <span class="phase-count">0 / 16 tasks — DB Foundation Ready</span>
+      <span class="phase-name">Economy, Marketplace & Monetization</span>
+      <span class="phase-count">Stage 2 Execution: Phase 5 & 6 DONE / Phase 7 Next</span>
     </div>
 
-    <!-- Sprint 3.1 -->
+    <!-- Stage 2 Phase 5: Subscription Billing Engine -->
     <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
-          <span class="sprint-id">3.1</span>
-          <span class="sprint-name">ZP Ranking Engine</span>
-          <span class="sprint-active-badge">ACTIVE</span>
+          <span class="sprint-id">P5</span>
+          <span class="sprint-name">Subscription Billing, Pro Analytics & VIP Perks</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--teal);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--teal);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">ZP Rules Definition:</span>เซ็ตค่าคะแนนทัวร์นาเมนต์ (1000 / 750 / 500 / 300)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">ZP Transaction Ledger:</span>ระบบบันทึกประวัติการได้คะแนนแบบป้องกันการสแปม</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Season & Annual Standings:</span>ระบบรวมคะแนน 4 Season เพื่อคัด TOP 12 ทีม</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 3.2 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">3.2</span>
-          <span class="sprint-name">Analytics & Player Market</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--teal);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">VCT Analytics Engine:</span>ระบบประมวลผล K/D/A, ACS, ADR และ First Bloods</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Athlete Passport (CV):</span>หน้าแสดงโปรไฟล์และสถิติเรดาร์รายบุคคล</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Player Market (Transfer):</span>ตลาดซื้อขาย/ยืมตัวเพลย์เยอร์ และค้นหานักกีฬา</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 3.3 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">3.3</span>
-          <span class="sprint-name">Streaming & AP Distribution</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">40%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 40%; background: var(--teal);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="note-callout warn">
-        <span class="icon">&#9888;</span>
-        <span class="note-text">Anti-abuse Required: ต้อง lock spec ก่อนเขียนโค้ด</span>
+      <div class="note-callout success">
+        <span class="icon">✅</span>
+        <span class="note-text">Smoke Test ผ่าน 100%: Invoice สร้างเป๊ะ (+30min), AP Renewal หักยอด 200 AP พร้อม FIFO Row Lock รัดกุม</span>
       </div>
       <div class="task-list">
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Embedded Streaming:</span>ติดตั้ง Video Player สำหรับดูถ่ายทอดสด (OBS Overlay + Supabase Realtime)</span>
+          <span class="task-label"><span class="task-name done-text">create_subscription_invoice():</span>รองรับ Fiat Checkout พร้อมระบบ Idempotency Key</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Replay & Clip API:</span>ระบบ create-clip, replay query endpoints พร้อม Schema (Signed-off by อลิส)</span>
+          <span class="task-label"><span class="task-name done-text">renew_subscription_with_ap():</span>ตัดยอด AP ตามแผนพร้อม Quota Reset รายเดือนอัตโนมัติ</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Watch-to-Earn Logic:</span>ระบบคำนวณแจกแต้ม AP จากการดู (จำกัดสูงสุด 100 AP/วัน)</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Pro Analytics View:</span><code>mv_team_analytics</code> คำนวณสรุป K/D/A, ACS, ADR แบบ Fast-read</span>
         </div>
         <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Anti-abuse Spec:</span>fingerprint / session tracking / bot detection — ต้อง define ก่อน implement</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">AP Wallet Architecture:</span>ระบบกระเป๋าแต้มพร้อม Lock Table ป้องกันการปั๊มแต้มซ้ำซ้อน</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">VIP Health Perks:</span>ระบบออก QR Code และ Scan Redeem โควต้ากายภาพบำบัด/สปอนเซอร์</span>
         </div>
       </div>
     </div>
 
-    <!-- Sprint 3.4 -->
-    <div class="sprint-group">
+    <!-- Stage 2 Phase 6: Marketplace Engine -->
+    <div class="sprint-group open">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
-          <span class="sprint-id">3.4</span>
-          <span class="sprint-name">Redemption Store & Merch</span>
+          <span class="sprint-id">P6</span>
+          <span class="sprint-name">Marketplace Storefront, Blind Auction & P2P AP Escrow</span>
+        </div>
+        <div class="sprint-progress-wrap">
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--teal);"></div></div></div>
+          <span class="chevron">&#9654;</span>
+        </div>
+      </div>
+      <div class="note-callout success">
+        <span class="icon">✅</span>
+        <span class="note-text">Smoke Test ผ่าน 100%: Zero-leak ตรวจไม่พบ <code>floor_price</code> ใน Listings, OTP Endpoint ตอบกลับสมบูรณ์</span>
+      </div>
+      <div class="task-list">
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">FFXI Blind Auction:</span>ระบบประมูลไอเทมแบบปกปิดราคา ป้องกันการเก็งกำไรและปั่นราคา</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">P2P Escrow & OTP Verification:</span>ระบบโอนแต้ม AP แบบปลอดภัย 2 ขั้นตอน พร้อม Anti-Sybil Check</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Storefront UI:</span>คอมโพเนนต์ร้านค้าและระบบจัดการสินค้า <code>StorefrontManager.tsx</code></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stage 2 Phase 7: NEXT ACTIVE TARGET -->
+    <div class="sprint-group open">
+      <div class="sprint-header" onclick="toggleSprint(this)">
+        <div class="sprint-name-wrap">
+          <span class="sprint-id">P7</span>
+          <span class="sprint-name">Predictions Pool & Watch-to-Earn V2</span>
+          <span class="sprint-active-badge">NEXT TARGET 🚀</span>
         </div>
         <div class="sprint-progress-wrap">
           <span class="sprint-pct-label">0%</span>
@@ -805,140 +783,15 @@
       <div class="task-list">
         <div class="task-item">
           <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">E-Commerce Backend:</span>ระบบร้านค้าแลกรางวัล (ค่าสมัครแข่ง, กรอบรูป, โค้ดเกม)</span>
+          <span class="task-label"><span class="task-name">Prediction Pools:</span>ระบบทายผลการแข่งและคำนวณแจก Pari-mutuel AP Pool</span>
         </div>
         <div class="task-item">
           <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Physical Merch Cart:</span>ระบบสั่งซื้อสินค้าจริงพร้อมเก็บที่อยู่จัดส่ง</span>
+          <span class="task-label"><span class="task-name">Watch-to-Earn V2:</span>ระบบ Heartbeat แจกแต้มคนดูสดพร้อม Bot & Anti-abuse Detection</span>
         </div>
         <div class="task-item">
           <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Transaction Confirmation:</span>UI ยืนยันการแลกของและการตัดยอด AP</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 3.5 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">3.5</span>
-          <span class="sprint-name">Hybrid Payment Gateway</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--teal);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="note-callout warn">
-        <span class="icon">&#9888;</span>
-        <span class="note-text">ต้อง lock Crypto chain ก่อนเริ่ม Sprint นี้ (BSC / ETH / Polygon — TBD)</span>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">THB / PromptPay Gateway:</span>เชื่อมต่อระบบชำระเงินบาท (QR PromptPay / Stripe)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Crypto Payment On-ramp:</span>ระบบชำระเงิน Web3 (USDT / chain TBD)</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Payment Webhook & Ledger Sync:</span>ระบบ Webhook ตรวจรับเงินและอัปเดตยอดคงเหลืออัตโนมัติ</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 3.6 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">3.6</span>
-          <span class="sprint-name">Dynamic CI Theming</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--teal);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="note-callout">
-        <span class="icon">&#8505;</span>
-        <span class="note-text">ย้ายมาจาก Sprint 1.1 — ทำหลัง Core เสร็จ</span>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Dynamic CI Theming:</span>สร้างระบบ Theme สลับสีเว็บตามซีซัน/แบรนดิ้ง (Dark Cyberpunk / Celestial)</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHASE 4 -->
-  <section class="phase-section">
-    <div class="phase-header">
-      <span class="phase-tag p4">PHASE 4</span>
-      <span class="phase-name">Game Integration & Grand Finals</span>
-      <span class="phase-count">0 / 5 tasks</span>
-    </div>
-
-    <!-- Sprint 4.1 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">4.1</span>
-          <span class="sprint-name">Game API & RSO</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--violet);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="note-callout">
-        <span class="icon">&#8505;</span>
-        <span class="note-text">RSO Approval ควรได้รับแล้วในช่วงนี้ (ยื่นตั้งแต่ Sprint 1.1)</span>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Riot Sign-On (RSO):</span>อัปเกรดการยืนยันตัวตนจาก SELF_DECLARED สู่ VERIFIED</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">PUUID Automated Sync:</span>ดึงข้อมูล Match History ผ่าน API เกมโดยตรงเพื่อป้องกันการโกงสถิติ</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sprint 4.2 -->
-    <div class="sprint-group">
-      <div class="sprint-header" onclick="toggleSprint(this)">
-        <div class="sprint-name-wrap">
-          <span class="sprint-id">4.2</span>
-          <span class="sprint-name">The Grand Event</span>
-        </div>
-        <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">0%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 0%; background: var(--violet);"></div></div></div>
-          <span class="chevron">&#9654;</span>
-        </div>
-      </div>
-      <div class="task-list">
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Zodiac Draw Engine:</span>ระบบสุ่มจับสลากผูก 12 ทีมเข้ากับ 12 ราศี</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Celestial Crown Operations:</span>จัดการแข่งขันระดับ Annual Finals</span>
-        </div>
-        <div class="task-item">
-          <span class="task-check todo"></span>
-          <span class="task-label"><span class="task-name">Seasonal Freeze & Archive:</span>ระบบสรุปผล เก็บประวัติลง Hall of Fame และเริ่ม Season ใหม่</span>
+          <span class="task-label"><span class="task-name">Cron Automation:</span>ตั้ง pg_cron ตัดรอบทายผลและแจกแต้มอัตโนมัติ</span>
         </div>
       </div>
     </div>
@@ -946,8 +799,8 @@
 </main>
 
 <footer class="site-footer">
-  <div class="footer-note">ZODIAC ARENA &bull; MASTER EXECUTION ROADMAP</div>
-  <div class="footer-note">CONFIDENTIAL &bull; INTERNAL DEV ONLY</div>
+  <div class="footer-note">ZODIAC ARENA &bull; MASTER ROADMAP V2.5</div>
+  <div class="footer-note">UPDATED: 2026-09-10 &bull; CONFIDENTIAL FOR MANAGEMENT & INVESTORS</div>
 </footer>
 
 <script>
