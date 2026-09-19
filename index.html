@@ -618,7 +618,8 @@
         <div class="blocker-item-name">5. Custom Domain <code>zodiacleaguetournaments.com</code></div>
         <div class="blocker-desc">
           • <strong>สถานะปัจจุบัน:</strong> DNS ของโดเมนหลักมีปัญหา + Vercel 2FA ล็อกอยู่ ใช้ <code>*.vercel.app</code> preview URL ชั่วคราวสำหรับเทส/เดโม<br>
-          • <strong>สิ่งที่ขาด:</strong> แก้ปัญหา DNS record + ปลดล็อก 2FA บัญชี Vercel เพื่อ point โดเมนจริงก่อน Go-Live
+          • <strong>สิ่งที่ขาด:</strong> แก้ปัญหา DNS record + ปลดล็อก 2FA บัญชี Vercel เพื่อ point โดเมนจริงก่อน Go-Live<br>
+          <span style="color: var(--amber);">***รอเบอร์มือถือ และเครื่องที่ใช้ เบอร์นั้นเพื่อยืนยัน F2A</span>
         </div>
       </div>
     </div>
@@ -1046,22 +1047,21 @@
       </div>
     </div>
 
-    <div class="sprint-group open">
+    <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">Broadcast</span>
           <span class="sprint-name">Live Broadcast — External Embed (Track A) & OBS Realtime Fix</span>
-          <span class="sprint-active-badge">PR PENDING</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">95%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 95%; background: var(--pink);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--pink);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
       </div>
-      <div class="note-callout warn">
-        <span class="icon">&#9888;</span>
-        <span class="note-text">โค้ดแก้เสร็จและ push ขึ้น branch แล้ว (2026-09-17) — รอเปิด PR ใหม่เพื่อ merge เข้า main (PR เดิมของกิ่งนี้ปิดไปก่อนแล้ว)</span>
+      <div class="note-callout success">
+        <span class="icon">✅</span>
+        <span class="note-text">Merged main (PR #8) — OBS Clean-View & Scene/HUD sync พร้อมใช้งานบน Production 100%</span>
       </div>
       <div class="task-list">
         <div class="task-item">
@@ -1073,37 +1073,77 @@
           <span class="task-label"><span class="task-name done-text">OBS Clean-View Fix:</span>ซ่อน Navbar/Widget เฉพาะหน้า Overlay ให้เป็นพื้นหลังโปร่งใสจริง</span>
         </div>
         <div class="task-item">
-          <span class="task-check pending">&#9203;</span>
-          <span class="task-label"><span class="task-name">Merge to Production:</span>รอเปิด PR ใหม่ + พี่หยัดกด Merge</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Merge to Production:</span>พี่หยัดกด Merge เข้า main เรียบร้อย</span>
         </div>
       </div>
     </div>
 
-    <div class="sprint-group open">
+    <div class="sprint-group">
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
-          <span class="sprint-id">In Progress</span>
+          <span class="sprint-id">Oracle</span>
           <span class="sprint-name">Oracle Engine (Riot ID Binding) & Vercel Speed Insights</span>
-          <span class="sprint-active-badge progress">IN DEV</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">60%</span>
-          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 60%; background: var(--pink);"></div></div></div>
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--pink);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
+      </div>
+      <div class="note-callout success">
+        <span class="icon">✅</span>
+        <span class="note-text">Merged main (PR #6 & PR #7) — Oracle Engine พร้อม React Markdown Formatting และ Speed Insights ติดตั้งครบ</span>
       </div>
       <div class="task-list">
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Riot ID Binding & Auto-Provisioning:</span>เขียนโค้ดเสร็จแล้ว รอ QA/Merge</span>
+          <span class="task-label"><span class="task-name done-text">Riot ID Binding & Auto-Provisioning:</span>QA/Merge สำเร็จ</span>
         </div>
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
-          <span class="task-label"><span class="task-name done-text">Oracle Markdown Styling:</span>ปรับการแสดงผลข้อความ Chatbot</span>
+          <span class="task-label"><span class="task-name done-text">Oracle Markdown Styling:</span>ปรับการแสดงผลข้อความ Chatbot พร้อม Retry mechanism</span>
         </div>
         <div class="task-item">
-          <span class="task-check pending">&#9203;</span>
-          <span class="task-label"><span class="task-name">Vercel Speed Insights:</span>Mount แล้วในโค้ด รอ Merge เข้า main</span>
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Vercel Speed Insights:</span>Merge เข้า main เรียบร้อย</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW V8.01 TASK -->
+    <div class="sprint-group">
+      <div class="sprint-header" onclick="toggleSprint(this)">
+        <div class="sprint-name-wrap">
+          <span class="sprint-id">V8.01</span>
+          <span class="sprint-name">Athlete Marketplace, Spectator & Tournament AP</span>
+        </div>
+        <div class="sprint-progress-wrap">
+          <span class="sprint-pct-label">100%</span>
+          <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--pink);"></div></div></div>
+          <span class="chevron">&#9654;</span>
+        </div>
+      </div>
+      <div class="note-callout success">
+        <span class="icon">✅</span>
+        <span class="note-text">Merged main (PR #10, #11, #13) + Match Lobby Hotfixes</span>
+      </div>
+      <div class="task-list">
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Athlete Marketplace & Popover:</span>Integrate AthleteQuickPopover Across Lobbies & Roster (TASK-ANDY-V8.01)</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Tournament Entry Fee:</span>Enforce move_ap RPC for tournament registration entry fee</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Public Spectator & Replay:</span>Add public spectator page for live stream & replay access</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">Match Lobby Resync:</span>อนุญาตให้กดที่นั่งและกด Ready ได้ทันทีโดยไม่ติดบั๊ก Role + แก้ไขบั๊ก VETO</span>
         </div>
       </div>
     </div>
@@ -1238,10 +1278,10 @@
       <div class="sprint-header" onclick="toggleSprint(this)">
         <div class="sprint-name-wrap">
           <span class="sprint-id">History</span>
-          <span class="sprint-name">Patch Release History — V1.01 ถึง V7.1.02</span>
+          <span class="sprint-name">Patch Release History — V1.01 ถึง V8.01</span>
         </div>
         <div class="sprint-progress-wrap">
-          <span class="sprint-pct-label">7 Patches</span>
+          <span class="sprint-pct-label">8 Patches</span>
           <div class="sprint-bar"><div class="bar-track"><div class="bar-fill" style="width: 100%; background: var(--emerald);"></div></div></div>
           <span class="chevron">&#9654;</span>
         </div>
@@ -1270,6 +1310,10 @@
         <div class="task-item">
           <span class="task-check done">&#10003;</span>
           <span class="task-label"><span class="task-name done-text">V7.01/V7.1.02 — Athlete Dashboard, Global Navbar+Logout, Sponsor & Partner Tier, Match Room & Mercy Scrim, Stress Test Hardening V3.0:</span>ดูรายละเอียดที่ Phase 6</span>
+        </div>
+        <div class="task-item">
+          <span class="task-check done">&#10003;</span>
+          <span class="task-label"><span class="task-name done-text">V8.01 — Athlete Marketplace, Spectator Page, Tournament Entry Fee AP & Match Lobby Hotfixes:</span>ดูรายละเอียดที่ Phase 6</span>
         </div>
       </div>
     </div>
